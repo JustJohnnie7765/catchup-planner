@@ -958,10 +958,10 @@
             }
         };
         
-        // Load from sessionStorage (since localStorage is not available)
+        // Load from localStorage (since localStorage is not available)
         function loadData() {
             try {
-                const savedData = sessionStorage.getItem('catchupAppData');
+                const savedData = localStorage.getItem('catchupAppData');
                 if (savedData) {
                     appData = JSON.parse(savedData);
                 } else {
@@ -975,10 +975,10 @@
             }
         }
         
-        // Save to sessionStorage
+        // Save to localStorage
         function saveData() {
             try {
-                sessionStorage.setItem('catchupAppData', JSON.stringify(appData));
+                localStorage.setItem('catchupAppData', JSON.stringify(appData));
             } catch (e) {
                 console.log('Error saving data:', e);
                 showNotification('Warning: Your data may not be saved when you close this app', 'warning');
